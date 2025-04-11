@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw           # alias de ton dataset dans DBT
+    database: symmetric-curve-452216-p4  # remplace par ton vrai ID GCP
+    schema: gz_raw_data       # nom réel du dataset
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+
+      - name: product
+        identifier: raw_gz_product
+
+      - name: ship
+        identifier: raw_gz_ship
