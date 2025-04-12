@@ -6,8 +6,7 @@ select
     ,sm.quantity
     ,sm.purchase_price
     ,sm.purchase_cost
-    ,sm.margin
-    ,sm.margin 
+    ,sm.revenue - sm.purchase_cost  
       + sh.shipping_fee 
       - sh.logcost 
       - CAST(sh.ship_cost AS FLOAT64) AS operational_margin
