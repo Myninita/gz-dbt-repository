@@ -40,8 +40,8 @@ models:
       - name: stg_raw__product
         description: List of all products sold by Greenweez. Primary Key
         columns:
-          - name: products_id
-            description: ID of the product purchased.
+          - name: products_id 
+            description: ID of the product purchased. string to float
             tests:
               - unique
               - not_null
