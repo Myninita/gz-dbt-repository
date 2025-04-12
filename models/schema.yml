@@ -29,10 +29,8 @@ models:
           - name: quantity
             description: Number of units sold
         tests:
-          - dbt_utils.unique_combination_of_columns:
-              combination_of_columns:
-               - orders_id
-               - product_id
+           - unique:
+               column_name: "(orders_id || '-' || products_id)"
 
       - name: stg_raw__product
         description: List of all products sold by Greenweez. Primary Key
