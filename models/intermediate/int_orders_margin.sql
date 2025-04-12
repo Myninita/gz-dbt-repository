@@ -3,8 +3,8 @@ orders_id
 ,date_date
 ,sum(revenue) AS revenue
 ,sum(quantity) AS  quantity
-,sum(purchase_cost) AS purchase_cost
-,sum(margin) AS margin
+,ROUND(sum(purchase_cost),2) AS purchase_cost
+,ROUND(SUM(revenue - (quantity * purchase_price)),2) AS margin
 FROM {{ ref ("int_sales_margin") }}
 GROUP BY 
 date_date
