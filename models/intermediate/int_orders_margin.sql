@@ -9,4 +9,4 @@ FROM {{ ref ("int_sales_margin") }}
 GROUP BY 
 date_date
 , orders_id
-ORDER BY date_date DESC
+ORDER BY date_date DESC 

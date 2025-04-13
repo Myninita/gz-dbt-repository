@@ -13,7 +13,7 @@ select
     ,CAST (sh.ship_cost AS FLOAT64) AS ship_cost
 from {{ ref("int_sales_margin") }} as sm
 JOIN {{ ref("stg_raw__ship") }} as sh
-ON sm.orders_id = sh.orders_id
+ON sm.orders_id = sh.orders_id 
 
 
  
