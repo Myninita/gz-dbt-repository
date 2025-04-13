@@ -1,7 +1,7 @@
 SELECT 
 orders_id
 ,date_date
-,sum(revenue) AS revenue
+,ROUND(sum(revenue),2) AS revenue
 ,sum(quantity) AS  quantity
 ,ROUND(sum(purchase_cost),2) AS purchase_cost
 ,ROUND(SUM(margin),2) AS margin
