@@ -6,6 +6,7 @@ select
     ,sm.quantity
     ,sm.purchase_price
     ,sm.purchase_cost
+    ,sm.margin
     ,round(sm.margin + sh.shipping_fee - (sh.logcost + sh.ship_cost),2) AS operational_margin
     ,sh.shipping_fee
     ,sh.logcost
