@@ -16,4 +16,5 @@ JOIN {{ ref("stg_raw__ship") }} as sh
 ON sm.orders_id = sh.orders_id 
 
 
+
  
