@@ -5,7 +5,6 @@ config-version: 2   # <-- version du format du fichier YAML
 profile: 'default'
 
 models:
-  gz_dbt_repository:
     marts:
       +materialized: table  # Matérialisation par défaut pour tous les modèles dans mart
 
