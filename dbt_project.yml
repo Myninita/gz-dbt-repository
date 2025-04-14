@@ -6,6 +6,7 @@ profile: 'default'
 
 models:
     marts:
+      +materialized: :view
       finance:
        +materialized: table  # Matérialisation par défaut pour tous les modèles dans mart
        +schema : finance
