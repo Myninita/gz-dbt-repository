@@ -6,7 +6,11 @@ profile: 'default'
 models:
   gz_dbt_repository:
     marts:
-      +materialized: view  # Matérialisation par défaut pour tous les modèles dans 'marts' en vues
-      finance:
-        +materialized: table  # Les modèles dans 'marts/finance' seront créés en tant que tables
-        +schema: finance  # Ces modèles seront créés dans le dataset 'finance'
+      +materialized: view  # Tous les modèles dans "marts" seront des vues
+    staging:
+      +materialized: view  # Tous les modèles dans "staging" seront des vues
+    intermediate:
+      +materialized: view  # Tous les modèles dans "intermediate" seront des vues
+    finance:
+      +materialized: table  # Le modèle "finance" sera en table
+      +schema: finance  # Schéma spécifique pour "finance" (optionnel)
