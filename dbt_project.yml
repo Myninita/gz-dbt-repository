@@ -6,7 +6,7 @@ profile: 'default'
 
 models:
     marts:
-    +materialized: table  # Matérialisation par défaut pour tous les modèles dans mart
-    finance:
-     +schema : finance
+      finance:
+       +materialized: table  # Matérialisation par défaut pour tous les modèles dans mart
+       +schema : finance
 
