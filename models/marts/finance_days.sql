@@ -1,3 +1,4 @@
+{{ config(materialized='table')}}
 SELECT
 date_date AS Date
 ,COUNT (DISTINCT orders_id) AS Total_nb_of_transactions
