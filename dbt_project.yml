@@ -1,13 +1,12 @@
-
 name: 'gz_dbt_repository'
 version: '1.0.0'
 config-version: 2   # <-- version du format du fichier YAML
 profile: 'default'
 
 models:
+  gz_dbt_repository:
     marts:
-      +materialized: :view
+      +materialized: view  # Matérialisation par défaut pour tous les modèles dans 'marts' en vues
       finance:
-       +materialized: table  # Matérialisation par défaut pour tous les modèles dans mart
-       +schema : finance
-
+        +materialized: table  # Les modèles dans 'marts/finance' seront créés en tant que tables
+        +schema: finance  # Ces modèles seront créés dans le dataset 'finance'
