@@ -1,16 +1,12 @@
 name: 'gz_dbt_repository'
 version: '1.0.0'
-config-version: 2   # <-- version du format du fichier YAML
+config-version: 2
 profile: 'default'
 
 models:
   gz_dbt_repository:
+    +materialized: view  # Tout sera en view par défaut
     marts:
-      +materialized: view  # Tous les modèles dans "marts" seront des vues
-    staging:
-      +materialized: view  # Tous les modèles dans "staging" seront des vues
-    intermediate:
-      +materialized: view  # Tous les modèles dans "intermediate" seront des vues
-    finance:
-      +materialized: table  # Le modèle "finance" sera en table
-      +schema: finance  # Schéma spécifique pour "finance" (optionnel)
+      finance:
+        +materialized: table  # Sauf les modèles dans marts/finance
+        +schema: finance       # Cela ira dans le dataset `dbt_tonprenom_finance`
