@@ -178,4 +178,130 @@ models:
           - dbt_utils.unique_combination_of_columns:
              combination_of_columns:
               - orders_id
-              - products_id
+              - products_id``
+
+      - name: stg_raw__adwords
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__bing
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__criteo
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__facebook
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+         
