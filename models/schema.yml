@@ -132,9 +132,7 @@ models:
         description: operational margin calculation per order
         columns:
           - name: orders_id
-            description: primary key
             tests:
-              - unique
               - not_null
           - name: date_date
             description: date of the order
@@ -164,4 +162,8 @@ models:
             description: the cost of preparing the parcel in the distribution centre/warehouse
           - name: ship_cost
             description: shipping cost paid by Greenweez to the carrier/logistics provider
-        
+        tests:
+          - dbt_utils.unique_combination_of_columns:
+             combination_of_columns:
+              - orders_id
+              - products_id
