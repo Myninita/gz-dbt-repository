@@ -132,7 +132,6 @@ models:
         description: operational margin calculation per order
         columns:
           - name: orders_id
-            description: primary key
             tests:
               - not_null
           - name: date_date
