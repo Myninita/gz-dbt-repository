@@ -1,3 +1,4 @@
+{{config (materialized = 'view')}}
 SELECT 
 date_date
 ,SUM (ads_cost) AS ads_cost
