@@ -19,6 +19,18 @@ sources:
       - name: ship
         identifier: raw_gz_ship
 
+      - name: adwords
+        identifier: raw_gz_adwords
+
+      - name: bing
+        identifier: raw_gz_bing   
+
+      - name: criteo
+        identifier: raw_gz_criteo
+
+      - name: facebook
+        identifier: raw_gz_facebook     
+
 models:
       - name: stg_raw__sales
         description: Sales of Greenweez / we have one row per product_id found in each orders_id
@@ -63,6 +75,132 @@ models:
           - name: ship_cost
             description: Cost of shipping, will be cast to the appropriate data type in the model.
     
+      - name: stg_raw__adwords
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__bing
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__criteo
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+      - name: stg_raw__facebook
+        description: campaign paid source adwords per day
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+              - unique
+          - name: paid_source
+            description: source of the  paid campaign
+            tests:
+              - not_null
+          - name: campaign_key
+            description: key number of the campaign
+          - name: campaign_name
+            description: name of the campaign
+            tests:
+              - not_null
+          - name: ads_cost
+            description: cost per day of the campaign
+            tests:
+              - not_null
+          - name: impression
+            description: impression per day of the campaign
+            tests:
+              - not_null
+          - name: click
+            description: click per day of the campaign
+            tests:
+              - not_null
+
+
+
      #intermediate#         
       - name: int_orders_margin
         description: margin calculation per order
@@ -167,3 +305,39 @@ models:
              combination_of_columns:
               - orders_id
               - products_id
+
+      - name: int_campaigns
+        description: all campaigns per day facebook criteo adswords bing union all
+        columns:
+          - name: date_date
+            description: date of the campaign, primary key
+            tests:
+              - not_null
+          - name: paid_source
+            description: campaign paid source  per day
+            tests:
+              - not_null
+          - name: campaign_key
+            description: campaign key of paid source campaign
+            tests:
+              - not_null
+          - name: campaign_name
+            description: name of the campaign on paid source
+            tests:
+              - not_null
+          - name: ads_cost
+            description: date of the order
+            tests:
+              - not_null
+          - name: impression
+            description: sum impression per day per campaign
+            tests:
+              - not_null
+          - name: click
+            description: sum of click per day per campaign
+            tests:
+              - not_null
+
+
+
+         
