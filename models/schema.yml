@@ -304,7 +304,7 @@ models:
           - dbt_utils.unique_combination_of_columns:
              combination_of_columns:
               - orders_id
-              - products_id``
+              - products_id
 
       - name: int_campaigns
         description: all campaigns per day facebook criteo adswords bing union all
